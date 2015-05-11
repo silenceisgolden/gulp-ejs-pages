@@ -1,3 +1,5 @@
+![status](https://secure.travis-ci.org/silenceisgolden/gulp-ejs-pages.svg?branch=master)
+
 ## Information
 
 <table>
