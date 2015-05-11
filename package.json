@@ -1,0 +1,35 @@
+{
+  "name": "ejs-page-builder",
+  "description": "Build a static site from EJS files and metadata.",
+  "private": true,
+  "author": "AJ Klein <aj@logicallyabstract.com>",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ejs": "^2.3.1",
+    "gulp-util": "^3.0.4",
+    "through2": "^0.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-debug": "^2.0.1",
+    "mocha": "^2.2.4",
+    "should": "^6.0.1",
+    "stream-assert": "^2.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
