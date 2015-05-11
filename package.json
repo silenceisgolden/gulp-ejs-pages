@@ -1,5 +1,5 @@
 {
-  "name": "ejs-page-builder",
+  "name": "gulp-ejs-pages",
   "description": "Build a static site from EJS files and metadata.",
   "private": true,
   "author": "AJ Klein <aj@logicallyabstract.com>",
