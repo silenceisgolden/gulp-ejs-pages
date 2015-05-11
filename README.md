@@ -22,6 +22,7 @@ var ejsPages = require('gulp-ejs-pages');
 gulp.task('html', function() {
   return gulp.src('./pages/**/*.ejs')
     .pipe(ejsPages())
+    // ... more stuff and things
     .pipe(gulp.dest('./www/'));
 });
 ```
