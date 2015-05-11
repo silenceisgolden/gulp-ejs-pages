@@ -1,7 +1,7 @@
 {
   "name": "gulp-ejs-pages",
   "description": "Build a static site from EJS files and metadata.",
-  "private": true,
+  "version": "0.1.1",
   "author": "AJ Klein <aj@logicallyabstract.com>",
   "keywords": [
     "gulpplugin"
