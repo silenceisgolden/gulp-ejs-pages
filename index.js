@@ -51,29 +51,20 @@ module.exports = function( options, settings ) {
     try {
       config = JSON.parse( fs.readFileSync( s.join('/'), 'utf8' ) );
     } catch( err ) {
-      // gutil.log( 'Error reading JSON for ' + file.path + ', skipping' );
-      this.emit('error', new gutil.PluginError( 'gulp-ejs-pages', 'Error reading JSON for ' + file.path + ', skipping' ));
-      config = null;
+      if ( options.log )
+        gutil.log( 'Error reading page.json for ' + file.path );
+
+      config = {};
     }
 
-    // use config to parse EJS
-    if( config ) {
+    var locals = merge( options, config );
+    locals.filename = file.path;
 
-      var locals = merge( options, config );
-      locals.filename = file.path;
-
-      try {
-        file.contents = new Buffer( ejs.render( file.contents.toString(), locals ));
-        file.path = gutil.replaceExtension( file.path, settings.ext );
-      } catch( err ) {
-        this.emit('error', new gutil.PluginError( 'gulp-ejs-pages', err.toString() ));
-      }
-
-    } else {
-
-      // no config but we still want to switch files to HTML (experimental)
+    try {
+      file.contents = new Buffer( ejs.render( file.contents.toString(), locals ));
       file.path = gutil.replaceExtension( file.path, settings.ext );
-
+    } catch( err ) {
+      this.emit('error', new gutil.PluginError( 'gulp-ejs-pages', err.toString() ));
     }
 
     // no matter what push the file
